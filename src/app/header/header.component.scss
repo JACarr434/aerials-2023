@@ -1,0 +1,60 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  nav a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  
+  nav a:hover {
+    color: #dd1c1a;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin: 0 10px;
+  }
+  
+  li:first-child {
+    margin-left: 0;
+  }
+  
+  li:last-child {
+    margin-right: 0;
+  }
+  
+  // .navbar {
+  //   background-color: #ff0000; /* replace with the company's primary color */
+  //   color: #fff;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   padding: 10px;
+  // }
+  
+  // .navbar a {
+  //   color: #fff;
+  //   text-decoration: none;
+  //   margin-right: 20px;
+  //   font-weight: bold;
+  //   font-size: 16px;
+  // }
