@@ -10,9 +10,14 @@ export class NavLinkComponent {
   @Input() overrideScrollTo?: string;
 
   scrollTo() {
+    if (this.overrideScrollTo === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     const scrollToId = this.overrideScrollTo || this.link;
 
-    const element = document.getElementById(this.link);
+    const element = document.getElementById(scrollToId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }

@@ -1,16 +1,16 @@
 <header id="header" class="mb-5">
   <div class="row">
     <nav
-      class="nd-flex justify-content-center align-items-center navbar fixed-top navbar-expand-lg navbar-light p-2 bg-danger"
+      class="nd-flex justify-content-center align-items-center navbar fixed-top navbar-expand-lg navbar-light p-2 nav-bg"
     >
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <!-- <a class="navbar-brand" href="#">
           <img
-            src="https://via.placeholder.com/200x50"
+            src="/assets/G&R Logo.webp"
             alt="Logo"
-            class="logo"
+            class="logo myLogo img-fluid"
           />
-        </a>
+        </a> -->
         <button
           class="navbar-toggler d-lg-none"
           type="button"
@@ -25,12 +25,12 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div
-          class="collapse navbar-collapse"
+          class="collapse navbar-collapse justify-content-center"
           id="navbarNav"
           [ngbCollapse]="isCollapsed"
         >
           <ul class="navbar-nav align-items-end">
-            <app-nav-link link="home" overrideScrollTo="header"></app-nav-link>
+            <app-nav-link link="home" overrideScrollTo="top"></app-nav-link>
             <app-nav-link link="about"></app-nav-link>
             <app-nav-link link="services"></app-nav-link>
             <app-nav-link link="contact"></app-nav-link>

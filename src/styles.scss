@@ -1,3 +1,5 @@
+$primaryColor: #910c0f;
+
 body {
     font-family: Arial, sans-serif;
     color: #333;
@@ -24,7 +26,7 @@ body {
   .jumbotron h1 {
     font-size: 48px;
     margin-bottom: 20px;
-    color: #ff0000; /* replace with the company's primary color */
+    color: $primaryColor; 
   }
   
   .jumbotron p {
@@ -61,7 +63,7 @@ body {
   }
   
   .btn {
-    background-color: #ff0000; /* replace with the company's primary color */
+    background-color: $primaryColor; /* replace with the company's primary color */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -73,7 +75,7 @@ body {
   }
   
   .btn:hover {
-    background-color: #cc0000; /* slightly darker shade of primary color */
+    background-color: darken($primaryColor,10); /* slightly darker shade of primary color */
     cursor: pointer;
   }
   
