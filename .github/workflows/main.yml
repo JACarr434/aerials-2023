@@ -25,4 +25,4 @@ jobs:
         username: gandraerialsandsatellites.co.uk
         password: ${{ secrets.ftp_password }}
         port: 21
-        local-dir: dist/
+        local-dir: dist/aerials-2023
