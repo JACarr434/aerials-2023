@@ -24,3 +24,4 @@ jobs:
         server: ssh.gandraerialsandsatellites.co.uk
         username: gandraerialsandsatellites.co.uk
         password: ${{ secrets.password }}
+        port: 22
