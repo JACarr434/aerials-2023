@@ -5,24 +5,17 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
-
-    - name: Use Node.js 16
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-      
-    - name: 🔨 Build Project
-      run: |
-        npm install
-        npm run build
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server:  ftp.gandraerialsandsatellites.co.uk
-        username: gandraerialsandsatellites.co.uk
-        password: ${{ secrets.ftp_password }}
-        port: 21
-        local-dir: dist/aerials-2023/
+      - uses: actions/checkout@master
+      - name: Download Artifact 'build'
+        uses: actions/download-artifact@master
+        with:
+          name: 'build'
+          path: '${{ github.workspace }}/build'      
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: 'ftp.gandraerialsandsatellites.co.uk'
+          ftp-username: 'gandraerialsandsatellites.co.uk'
+          ftp-password: '${{ secrets.FTP_PASSWORD }}'
+          local-dir: 'build/'
+          git-ftp-args: '--all'
