@@ -1,21 +1,18 @@
-on: push
-name: 🚀 Deploy website on push
+name: CI -> Deploy to My website
+on:
+  push:
+    branches: [ master, Development ]
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Download Artifact 'build'
-        uses: actions/download-artifact@master
+      - uses: actions/checkout@v2
+      # Here is the deployment action
+      - name: Upload from public_html via FTP
+        uses: airvzxf/ftp-deployment-action@latest
         with:
-          name: 'build'
-          path: '${{ github.workspace }}/build'      
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
-        with:
-          ftp-server: 'ftp.gandraerialsandsatellites.co.uk'
-          ftp-username: 'gandraerialsandsatellites.co.uk'
-          ftp-password: '${{ secrets.FTP_PASSWORD }}'
-          local-dir: 'build/'
-          git-ftp-args: '--all'
+          server: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_dir: "./dist/aerials-2023"
+          delete: "false"
